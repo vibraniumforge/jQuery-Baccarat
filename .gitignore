@@ -4,9 +4,7 @@
 /node_modules
 package.json
 package-lock.json
-baccarat.css
-baccarat.js
-baccarat.html
+index.html
 
 # testing
 /coverage

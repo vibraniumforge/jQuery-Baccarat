@@ -555,7 +555,7 @@
                 bankerTotal = bankerHand[2]
                     ? (bankerHand[0].value + bankerHand[1].value + bankerHand[2].value) % 10
                     : (bankerHand[0].value + bankerHand[1].value) % 10;
-                showThirdCards(l);
+                showThirdCards();
             }
 
             function showThirdCards() {
@@ -819,6 +819,8 @@
                 playerWins = false;
                 bankerWins = false;
                 resultIsATie = false;
+                resultIsADragon = false;
+                resultIsAPanda = false;
                 playerTotalCards = 0;
                 bankerTotalCards = 0;
                 seeIfThereIsEnoughMoney();

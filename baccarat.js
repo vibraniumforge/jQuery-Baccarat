@@ -8,7 +8,9 @@ let panda8Hands = 0;
 let totalHands = 0;
 let myRunningChipTotal = 1000;
 
-$("#dealButton").prop("disabled", true);
+$("#aboutTheGame").on("click", explainTheGame);
+$("#shuffleButton").on("click", createShoe);
+$("#dealButton").on("click", dealAHand);
 
 function explainTheGame() {
   console.log("WELCOME TO BACCARAT EASILY!!!");
@@ -286,7 +288,7 @@ function dealAHand() {
     bankerTotal = bankerHand[2]
       ? (bankerHand[0].value + bankerHand[1].value + bankerHand[2].value) % 10
       : (bankerHand[0].value + bankerHand[1].value) % 10;
-    showThirdCards(l);
+    showThirdCards();
   }
 
   function showThirdCards() {
@@ -550,6 +552,8 @@ function dealAHand() {
     playerWins = false;
     bankerWins = false;
     resultIsATie = false;
+    resultIsADragon = false;
+    resultIsAPanda = false;
     playerTotalCards = 0;
     bankerTotalCards = 0;
     seeIfThereIsEnoughMoney();
