@@ -5,6 +5,7 @@
 package.json
 package-lock.json
 index.html
+.gitignore
 
 # testing
 /coverage
