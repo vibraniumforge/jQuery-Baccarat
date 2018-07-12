@@ -4,7 +4,7 @@
 /node_modules
 package.json
 package-lock.json
-index.html
+onepage.html
 .gitignore
 
 # testing

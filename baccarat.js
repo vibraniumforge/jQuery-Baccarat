@@ -12,7 +12,10 @@ $("#aboutTheGame").on("click", explainTheGame);
 $("#shuffleButton").on("click", createShoe);
 $("#dealButton").on("click", dealAHand);
 
+$("#dealButton").prop("disabled", true);
+
 function explainTheGame() {
+  event.stopImmediatePropagation()
   console.log("WELCOME TO BACCARAT EASILY!!!");
   console.log("To play baccarat, you must bet on a side, Player or Banker.");
   console.log("The value of a hand is the sum of the cards.");
@@ -46,6 +49,7 @@ function explainTheGame() {
 }
 
 function createShoe() {
+  event.stopImmediatePropagation()
   theDiscard = [];
   theShoe = [];
   createTheShoe();
@@ -140,6 +144,7 @@ function createShoe() {
 //-----------------------------------------------------------------------------------
 
 function dealAHand() {
+  event.stopImmediatePropagation()
   let playerTotal = null;
   let bankerTotal = null;
   let playerWins = false;
