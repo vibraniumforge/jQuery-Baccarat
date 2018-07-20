@@ -1,5 +1,5 @@
-let theDiscard = [];
 let theShoe = [];
+let theDiscard = [];
 let playerWinningHands = 0;
 let bankerWinningHands = 0;
 let tieHands = 0;
@@ -15,7 +15,7 @@ $("#dealButton").on("click", dealAHand);
 $("#dealButton").prop("disabled", true);
 
 function explainTheGame() {
-  event.stopImmediatePropagation()
+  event.stopImmediatePropagation();
   console.log("WELCOME TO BACCARAT EASILY!!!");
   console.log("To play baccarat, you must bet on a side, Player or Banker.");
   console.log("The value of a hand is the sum of the cards.");
@@ -49,7 +49,7 @@ function explainTheGame() {
 }
 
 function createShoe() {
-  event.stopImmediatePropagation()
+  event.stopImmediatePropagation();
   theDiscard = [];
   theShoe = [];
   createTheShoe();
@@ -58,10 +58,10 @@ function createShoe() {
 
   function card(name, suit, value, deck, image) {
     this.name = name;
-    this.suit = suit;
-    this.value = value > 10 ? 0 : value;
-    this.deck = deck;
     this.image = image;
+    this.suit = suit;
+    this.deck = deck;
+    this.value = value > 10 ? 0 : value;
   }
 
   function createTheShoe() {
@@ -144,7 +144,7 @@ function createShoe() {
 //-----------------------------------------------------------------------------------
 
 function dealAHand() {
-  event.stopImmediatePropagation()
+  event.stopImmediatePropagation();
   let playerTotal = null;
   let bankerTotal = null;
   let playerWins = false;
@@ -567,7 +567,7 @@ function dealAHand() {
   function seeIfThereIsEnoughMoney() {
     if (myRunningChipTotal === 0) {
       console.log("You have run out of money. Please restart the game.");
-      stop();
+      stopTheGame();
     }
     seeIfThereAreEnoughCards();
   }
@@ -575,7 +575,7 @@ function dealAHand() {
   function seeIfThereAreEnoughCards() {
     if (theShoe.length < 52) {
       console.log("The cut card is out. Please reshuffle.");
-      stop();
+      stopTheGame();
     }
     console.log(
       "-------------------Hand",
@@ -584,7 +584,7 @@ function dealAHand() {
     );
   }
 
-  function stop() {
+  function stopTheGame() {
     console.log("Game stopped. Shuffle the deck again to reset.");
     $("#dealButton").prop("disabled", true);
     playerWinningHands = 0;
